@@ -21,7 +21,7 @@
   "homepage": "https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development#readme",
   "dependencies": {
     "@asciidoctor/cli": "^4.0.0",
-    "@asciidoctor/core": "^3.0.4",
+    "@asciidoctor/core": "^2.2.8",
     "asciidoc-link-check": "^1.0.18",
     "asciidoctor-kroki": "^0.18.1",
     "asciidoctor-pdf": "1.0.0-alpha.16",
