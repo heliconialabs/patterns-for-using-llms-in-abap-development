@@ -72,35 +72,35 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 
 |SE80 / Eclipse
 |No
-|Low
+|$
 |High
-|7.31+
+|Any
 |Any
 
 |Virtual FS
 |No
-|Low
+|$
 |High
 |7.31+
 |ADT
 
 |MCP
 |No
-|High
+|$
 |High
 |7.31+
 |ADT
 
 |Sandboxed
 |Possible
-|High
+|$$$
 |Low
 |7.31+
 |ADT
 
 |Git / Off-Stack
 |Yes
-|Medium
+|$$
 |Low
 |702+
 |abapGit
@@ -109,5 +109,7 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
 
 Combinations and nuances of above. Take care and consider risks.
+
+abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
 
 #keepTheCoreMoving
