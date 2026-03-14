@@ -66,12 +66,11 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 
 == Zusammenfassung
 
-[cols="2,1,1,1,1,1,1",options="header",frame=all,grid=all]
+[cols="2,1,1,1,1,1",options="header",frame=all,grid=all]
 |===
-|Pattern |Autonomous |Concurrent |Cost |Risk |Version required |Object types
+|Pattern |Autonomous |Cost |Risk |Version required |Object types
 
 |SE80 / Eclipse
-|No
 |No
 |Low
 |Low
@@ -80,23 +79,20 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 
 |Virtual FS
 |No
-|Yes
-|Medium
+|Low
 |Low
 |NW 7.0+
 |Limited
 
 |MCP
 |No
-|Yes
-|Medium
+|Low
 |Medium
 |NW 7.5+
 |Any
 
 |Sandboxed
 |Possible
-|Yes
 |High
 |Low
 |7.0+
@@ -104,12 +100,13 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 
 |Git / Off-Stack
 |Yes
-|Yes
-|Low
+|Medium
 |Medium
 |Any
 |Any
 |===
+
+Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
 
 Combinations and nuances of above. Take care and consider risks.
 
