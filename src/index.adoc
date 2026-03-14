@@ -66,15 +66,51 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 
 == Zusammenfassung
 
-Autonomous?
-Concurrent?
-Cost?
-Risk?
-Version required?
-Object types?
+[cols="2,1,1,1,1,1,1",options="header",frame=all,grid=all]
+|===
+|Pattern |Autonomous |Concurrent |Cost |Risk |Version required |Object types
 
+|SE80 / Eclipse
+|No
+|No
+|Low
+|Low
+|Any
+|Any
 
-combinations and nuances of above
-take care and consider risks
+|Virtual FS
+|No
+|Yes
+|Medium
+|Low
+|NW 7.0+
+|Limited
+
+|MCP
+|No
+|Yes
+|Medium
+|Medium
+|NW 7.5+
+|Any
+
+|Sandboxed
+|Possible
+|Yes
+|High
+|Low
+|7.0+
+|Any
+
+|Git / Off-Stack
+|Yes
+|Yes
+|Low
+|Medium
+|Any
+|Any
+|===
+
+Combinations and nuances of above. Take care and consider risks.
 
 #keepTheCoreMoving
