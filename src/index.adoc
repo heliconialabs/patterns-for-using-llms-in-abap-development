@@ -1,0 +1,56 @@
+:plantuml-server-url: https://www.plantuml.com/plantuml
+:source-highlighter: highlightjs
+
+= Patterns for using LLMs in ABAP development
+Lars Hvam, Heliconia Labs, March 2026
+:numbered:
+
+[cols="1,3",frame=none,grid=none]
+|===
+|Home
+|link:https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development[https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development]
+
+|License
+|Creative Commons Attribution 4.0 International License
+
+|Build
+|{docdatetime}
+|===
+
+== Introduction
+
+extension release
+contributions welcome
+todo
+
+== Patterns
+
+=== SE80/Eclipse
+todo
+
+Examples: todo
+
+=== Virtual file system
+todo
+
+Examples: todo
+
+=== Model context protocol
+todo
+
+Examples: todo
+
+=== Sandboxed
+todo
+
+Examples: todo
+
+=== Git Foundation
+link to Filak
+
+Examples: todo
+
+== Zusammenfassung
+
+combination of all
+take care and consider risks
