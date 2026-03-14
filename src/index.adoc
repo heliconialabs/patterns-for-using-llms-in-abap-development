@@ -73,37 +73,37 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 |SE80 / Eclipse
 |No
 |Low
-|Low
-|Any
+|High
+|7.31+
 |Any
 
 |Virtual FS
 |No
 |Low
-|Low
-|NW 7.0+
-|Limited
+|High
+|7.31+
+|ADT
 
 |MCP
 |No
-|Low
-|Medium
-|NW 7.5+
-|Any
+|High
+|High
+|7.31+
+|ADT
 
 |Sandboxed
 |Possible
 |High
 |Low
-|7.0+
-|Any
+|7.31+
+|ADT
 
 |Git / Off-Stack
 |Yes
 |Medium
-|Medium
-|Any
-|Any
+|Low
+|702+
+|abapGit
 |===
 
 Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
