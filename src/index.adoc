@@ -8,7 +8,7 @@ Lars Hvam, Heliconia Labs, March 2026
 [cols="1,3",frame=none,grid=none]
 |===
 |Home
-|link:https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development[GitHub Repository]
+|link:https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development[https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development]
 
 |License
 |Creative Commons Attribution 4.0 International License
@@ -31,7 +31,7 @@ Start with the basics, link:https://factory.ai/news/agent-readiness[Agent Readin
 === SE80 / Eclipse
 todo
 
-Examples: Joule
+Examples: Kiro/Developer Q, Joule
 
 === Virtual File System via ADT
 todo
@@ -56,13 +56,17 @@ link:https://www.linkedin.com/pulse/coding-agents-abap-source-codes-jakub-fil%C3
 
 === Git / Off-Stack
 
-Examples: Everything normal, any editor, abapGit
+Examples: Any editor, abapGit
 
 abapGit 10 years battle tested
 
 preview deployments
 
 Don't introduce git to enable LLMs, but choose git for version control, code reviews, and collaboration, and then use LLMs within that context.
+
+Human in the loop to decide which code goes into the central development system.
+
+abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
 
 == Zusammenfassung
 
@@ -110,8 +114,8 @@ Combinations and nuances of above. Take care and consider risks.
 
 Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
 
-abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
-
 Recommend designing and choosing patterns which can make the agents run fully autonomously, but start with patterns which are less risky and costly, and then evolve towards more autonomy as you gain experience and confidence.
+
+High risk assuming the LLM can write to the main development system, which can lead to unintended consequences, such as code changes that break the system, security vulnerabilities, or data loss.
 
 #keepTheCoreMoving
