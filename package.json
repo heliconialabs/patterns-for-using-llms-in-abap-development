@@ -1,0 +1,30 @@
+{
+  "name": "patterns-for-using-llms-in-abap-development",
+  "version": "1.0.0",
+  "private": true,
+  "description": "todo, intro",
+  "scripts": {
+    "links": "find src -name \\*.adoc | xargs -n1 asciidoc-link-check -p",
+    "pdf": "asciidoctor-web-pdf -a stem -r asciidoctor-plantuml -r asciidoctor-kroki -d book -D build src/index.adoc -a stylesheet=\"asciidoctor-pdf/css/asciidoctor.css,asciidoctor-pdf/css/document.css,asciidoctor-pdf/css/features/title-page.css,custom.css\"",
+    "move": "mv build/index.pdf build/patterns-for-using-llms-in-abap-development.pdf",
+    "test": "npm run pdf && npm run move"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development/issues"
+  },
+  "homepage": "https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development#readme",
+  "dependencies": {
+    "@asciidoctor/cli": "^3.5.0",
+    "@asciidoctor/core": "^2.2.6",
+    "asciidoc-link-check": "^1.0.17",
+    "asciidoctor-kroki": "^0.16.0",
+    "asciidoctor-pdf": "1.0.0-alpha.16",
+    "asciidoctor-plantuml": "^1.5.0"
+  }
+}

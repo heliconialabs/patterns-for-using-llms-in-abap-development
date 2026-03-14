@@ -1,0 +1,25 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
+    - name: Run npm steps
+      run: |
+        npm install
+        npm test
+    - name: Deploy to docs.heliconialabs.com
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main' && github.repository == 'heliconialabs/patterns-for-using-llms-in-abap-development'
+      with:
+        deploy_key: ${{ secrets.DOCS_DEPLOY_KEY }}
+        external_repository: heliconialabs/docs.heliconialabs.com
+        publish_branch: main
+        keep_files: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        publish_dir: ./build

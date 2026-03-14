@@ -1,0 +1,90 @@
+.toc a::after {
+  content: target-counter(attr(href), page);
+  float: right;
+}
+
+@page:left {
+  @bottom-right {
+    content: "Page " counter(page);
+  }
+}
+
+@page:right {
+  @bottom-left {
+    content: "Page " counter(page);
+  }
+}
+
+#toc,
+.title-document {
+  break-after: always;
+}
+
+#img-sunset {
+  position: running(titleRunning);
+}
+
+/* logo on frontpage */
+@page :first {
+  background-size: 50%;
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-image: url("./img/heliconialabs_pathed.svg");
+}
+
+/* Remove border between headings (== tags) */
+.sect1 + .sect1 {
+  border-top: 0;
+}
+
+/* Add more space in botton for page title */
+.pagedjs_margin-bottom {
+  grid-template-columns: 1fr 4fr 1fr !important;
+}
+
+/* Remove border after toc */
+[data-id="toc"] {
+  border-bottom: 0px !important;
+}
+
+/* Center cover */
+[data-id="cover"] {
+  align-items: center !important;
+}
+
+/* Add box above page title */
+h1::before {
+  content: '';
+    position: absolute;
+    width: 145px;
+    height: 10px;
+    /* left: 0; */
+    display: block;
+    clear: both;
+    background-color: black;
+
+    left: 50%;
+    transform: translate(-50%, -25px);
+}
+
+h1, h2, h3, h4, #toctitle {
+  font-family: sans-serif;
+  font-weight: bold !important;
+}
+
+html, body, [data-id="toc"] ul {
+  font-family: sans-serif !important;
+}
+
+/* disable zebra stripes */
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: unset
+}
+
+#cover h1 {
+  color: #999;
+  font-weight: 200;
+  font-size: 2rem;
+  padding: 0;
+  margin-bottom: 1rem;
+}
