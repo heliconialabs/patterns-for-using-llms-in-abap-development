@@ -19,38 +19,121 @@ Lars Hvam, Heliconia Labs, March 2026
 
 == Introduction
 
-extension release
+SAP extension release
 contributions welcome
-todo
+
+link:https://github.com/marianfoo/sap-ai-mcp-servers[SAP MCP Servers and SAP AI Skills]
+
+Start with the basics, link:https://factory.ai/news/agent-readiness[Agent Readiness] and link:https://dora.dev/ai/[DORA AI]
 
 == Patterns
 
-=== SE80/Eclipse
+=== SE80 / Eclipse
+
+image::img/pattern-se80-eclipse.svg[SE80 / Eclipse pattern]
+
 todo
 
-Examples: todo
+Examples: Kiro/Developer Q, Joule
 
-=== Virtual file system
+=== Virtual File System via ADT
+
+image::img/pattern-virtual-fs.svg[Virtual File System via ADT pattern]
+
 todo
 
-Examples: todo
+Examples: link:https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs[ABAP remote filesystem]
 
-=== Model context protocol
+=== Model Context Protocol via ADT
+
+image::img/pattern-mcp-adt.svg[Model Context Protocol via ADT pattern]
+
 todo
 
-Examples: todo
+Examples: link:https://github.com/oisee/vibing-steampunk[vibing-steampunk]
 
 === Sandboxed
+
+image::img/pattern-sandboxed.svg[Sandboxed pattern]
+
 todo
 
+LLMs connect via MCP or Remote File system to a sandbox system. The sandbox system is isolated from the main development system, and can be used for testing and experimentation without risking the stability of the main system.
+
+Each developer can have their own sandbox system, or there can be a shared sandbox system for the team. The sandbox system can be reset to a known state if something goes wrong.
+
 Examples: todo
 
-=== Git Foundation
-link to Filak
+link:https://www.linkedin.com/pulse/coding-agents-abap-source-codes-jakub-fil%C3%A1k-ym8gf/[Coding Agents with ABAP source codes] - Jakub Filák
 
-Examples: todo
+=== Git / Off-Stack
+
+image::img/pattern-git-offstack.svg[Git / Off-Stack pattern]
+
+Examples: Any editor, abapGit
+
+abapGit 10 years battle tested
+
+preview deployments
+
+Don't introduce git to enable LLMs, but choose git for version control, code reviews, and collaboration, and then use LLMs within that context.
+
+Human in the loop to decide which code goes into the central development system.
+
+abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
+
+Running static analysis and unit tests for each commit, providing feedback to the developer and the LLM, and ensuring that only code that meets quality standards is merged into the central development system.
+
+Industry standard, proven workflows => lots of existing knowledge, best practices, and tools to draw upon.
 
 == Zusammenfassung
 
-combination of all
-take care and consider risks
+[cols="2,1,1,1,1,1",options="header",frame=all,grid=all]
+|===
+|Pattern |Autonomous |Cost |Risk |Version required |Object types
+
+|SE80 / Eclipse
+|No
+|$
+|High
+|Any
+|Any
+
+|Virtual FS
+|No
+|$
+|High
+|7.31+
+|ADT
+
+|MCP
+|No
+|$
+|High
+|7.31+
+|ADT
+
+|Sandboxed
+|Possible
+|$$$
+|Low
+|Any
+|ADT
+
+|Git / Off-Stack
+|Yes
+|$$
+|Low
+|7.02+
+|abapGit
+|===
+
+Combinations and nuances of above. Take care and consider risks.
+
+Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
+
+Recommend designing and choosing patterns which can make the agents run fully autonomously, but start with patterns which are less risky and costly, and then evolve towards more autonomy as you gain experience and confidence.
+
+High risk assuming the LLM can write to the main development system, which can lead to unintended consequences, such as code changes that break the system, security vulnerabilities, or data loss.
+
+#keepTheCoreMoving
