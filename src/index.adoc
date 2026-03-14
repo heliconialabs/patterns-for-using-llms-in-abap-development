@@ -33,12 +33,12 @@ todo
 
 Examples: Joule
 
-=== Virtual File System
+=== Virtual File System via ADT
 todo
 
 Examples: link:https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs[ABAP remote filesystem]
 
-=== Model Context Protocol
+=== Model Context Protocol via ADT
 todo
 
 Examples: link:https://github.com/oisee/vibing-steampunk[vibing-steampunk]
