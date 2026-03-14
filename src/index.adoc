@@ -25,32 +25,37 @@ todo
 
 == Patterns
 
-=== SE80/Eclipse
+=== SE80 / Eclipse
 todo
 
-Examples: todo
+Examples: Joule
 
-=== Virtual file system
+=== Virtual File System
 todo
 
-Examples: todo
+Examples: https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs
 
-=== Model context protocol
+=== Model Context Protocol
 todo
 
-Examples: todo
+Examples: https://github.com/oisee/vibing-steampunk
 
 === Sandboxed
 todo
 
 Examples: todo
 
-=== Git Foundation
+=== Git / Off-Stack
 link to Filak
 
-Examples: todo
+Examples: Everything normal, any editor
 
 == Zusammenfassung
 
-combination of all
+Autonomous?
+Concurrent?
+Cost?
+Risk?
+
+combinations of above
 take care and consider risks
