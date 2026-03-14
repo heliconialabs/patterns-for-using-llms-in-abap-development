@@ -1,7 +1,7 @@
 :plantuml-server-url: https://www.plantuml.com/plantuml
 :source-highlighter: highlightjs
 
-= Patterns for using LLMs in ABAP deveopment
+= Patterns for using LLMs in ABAP development
 Lars Hvam, Heliconia Labs, March 2026
 :numbered:
 
@@ -25,11 +25,30 @@ todo
 
 == Patterns
 
-* SE80/Eclipse
-* Virutal FS
-* MCP
-* Sandboxed
-* Git Foundation
+=== SE80/Eclipse
+todo
+
+Examples: todo
+
+=== Virtual file system
+todo
+
+Examples: todo
+
+=== Model context protocol
+todo
+
+Examples: todo
+
+=== Sandboxed
+todo
+
+Examples: todo
+
+=== Git Foundation
+link to Filak
+
+Examples: todo
 
 == Zusammenfassung
 
