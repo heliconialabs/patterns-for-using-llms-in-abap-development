@@ -68,6 +68,8 @@ Human in the loop to decide which code goes into the central development system.
 
 abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
 
+Running static analysis and unit tests for each commit, providing feedback to the developer and the LLM, and ensuring that only code that meets quality standards is merged into the central development system.
+
 == Zusammenfassung
 
 [cols="2,1,1,1,1,1",options="header",frame=all,grid=all]
