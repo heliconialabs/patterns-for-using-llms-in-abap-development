@@ -95,21 +95,23 @@ Don't introduce git to enable LLMs, but choose git for version control, code rev
 |Possible
 |$$$
 |Low
-|7.31+
+|Any
 |ADT
 
 |Git / Off-Stack
 |Yes
 |$$
 |Low
-|702+
+|7.02+
 |abapGit
 |===
 
-Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
-
 Combinations and nuances of above. Take care and consider risks.
 
+Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
+
 abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
+
+Recommend designing and choosing patterns which can make the agents run fully autonomously, but start with patterns which are less risky and costly, and then evolve towards more autonomy as you gain experience and confidence.
 
 #keepTheCoreMoving
