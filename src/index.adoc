@@ -29,21 +29,33 @@ Start with the basics, link:https://factory.ai/news/agent-readiness[Agent Readin
 == Patterns
 
 === SE80 / Eclipse
+
+image::img/pattern-se80-eclipse.svg[SE80 / Eclipse pattern]
+
 todo
 
 Examples: Kiro/Developer Q, Joule
 
 === Virtual File System via ADT
+
+image::img/pattern-virtual-fs.svg[Virtual File System via ADT pattern]
+
 todo
 
 Examples: link:https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs[ABAP remote filesystem]
 
 === Model Context Protocol via ADT
+
+image::img/pattern-mcp-adt.svg[Model Context Protocol via ADT pattern]
+
 todo
 
 Examples: link:https://github.com/oisee/vibing-steampunk[vibing-steampunk]
 
 === Sandboxed
+
+image::img/pattern-sandboxed.svg[Sandboxed pattern]
+
 todo
 
 LLMs connect via MCP or Remote File system to a sandbox system. The sandbox system is isolated from the main development system, and can be used for testing and experimentation without risking the stability of the main system.
@@ -55,6 +67,8 @@ Examples: todo
 link:https://www.linkedin.com/pulse/coding-agents-abap-source-codes-jakub-fil%C3%A1k-ym8gf/[Coding Agents with ABAP source codes] - Jakub Filák
 
 === Git / Off-Stack
+
+image::img/pattern-git-offstack.svg[Git / Off-Stack pattern]
 
 Examples: Any editor, abapGit
 
@@ -69,6 +83,8 @@ Human in the loop to decide which code goes into the central development system.
 abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
 
 Running static analysis and unit tests for each commit, providing feedback to the developer and the LLM, and ensuring that only code that meets quality standards is merged into the central development system.
+
+Industry standard, proven workflows => lots of existing knowledge, best practices, and tools to draw upon.
 
 == Zusammenfassung
 

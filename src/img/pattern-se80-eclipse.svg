@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Developer -->
+  <circle cx="80" cy="120" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="140" x2="80" y2="190" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="160" x2="55" y2="175" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="160" x2="105" y2="175" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="190" x2="55" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="190" x2="105" y2="220" stroke="#333" stroke-width="2"/>
+  <text x="80" y="245" text-anchor="middle" font-size="13" fill="#333">Developer</text>
+
+  <!-- SE80 / Eclipse IDE -->
+  <rect x="180" y="90" width="200" height="120" rx="8" fill="#e8f4fd" stroke="#2196F3" stroke-width="2"/>
+  <text x="280" y="125" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565C0">SE80 / Eclipse</text>
+  <rect x="200" y="140" width="160" height="50" rx="5" fill="#fff" stroke="#90CAF9" stroke-width="1.5"/>
+  <text x="280" y="162" text-anchor="middle" font-size="12" fill="#1976D2">Joule / Developer Q</text>
+  <text x="280" y="178" text-anchor="middle" font-size="11" fill="#666">(built-in AI)</text>
+
+  <!-- Arrow: Developer to IDE -->
+  <line x1="120" y1="150" x2="175" y2="150" stroke="#555" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+  <!-- Arrow: IDE to SAP -->
+  <line x1="385" y1="150" x2="440" y2="150" stroke="#555" stroke-width="1.5" marker-end="url(#arrow1)"/>
+  <text x="413" y="140" text-anchor="middle" font-size="11" fill="#888">RFC / API</text>
+
+  <!-- SAP System -->
+  <rect x="445" y="70" width="210" height="160" rx="8" fill="#fff3e0" stroke="#FF9800" stroke-width="2"/>
+  <text x="550" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#E65100">SAP System</text>
+  <rect x="465" y="120" width="170" height="35" rx="4" fill="#fff" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="550" y="143" text-anchor="middle" font-size="12" fill="#F57C00">ABAP Objects</text>
+  <rect x="465" y="165" width="170" height="35" rx="4" fill="#fff" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="550" y="188" text-anchor="middle" font-size="12" fill="#F57C00">Transport System</text>
+
+  <!-- Risk label -->
+  <rect x="445" y="245" width="210" height="30" rx="4" fill="#ffebee" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="550" y="265" text-anchor="middle" font-size="12" fill="#c62828">Direct write access to system</text>
+</svg>
