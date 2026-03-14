@@ -8,7 +8,7 @@ Lars Hvam, Heliconia Labs, March 2026
 [cols="1,3",frame=none,grid=none]
 |===
 |Home
-|link:https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development[https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development]
+|link:https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development[GitHub Repository]
 
 |License
 |Creative Commons Attribution 4.0 International License
@@ -19,9 +19,12 @@ Lars Hvam, Heliconia Labs, March 2026
 
 == Introduction
 
-extension release
+SAP extension release
 contributions welcome
-todo
+
+link:https://github.com/marianfoo/sap-ai-mcp-servers[SAP MCP Servers and SAP AI Skills]
+
+Start with the basics, link:https://factory.ai/news/agent-readiness[Agent Readiness] and link:https://dora.dev/ai/[DORA AI]
 
 == Patterns
 
@@ -33,22 +36,33 @@ Examples: Joule
 === Virtual File System
 todo
 
-Examples: https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs
+Examples: link:https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs[ABAP remote filesystem]
 
 === Model Context Protocol
 todo
 
-Examples: https://github.com/oisee/vibing-steampunk
+Examples: link:https://github.com/oisee/vibing-steampunk[vibing-steampunk]
 
 === Sandboxed
 todo
 
+LLMs connect via MCP or Remote File system to a sandbox system. The sandbox system is isolated from the main development system, and can be used for testing and experimentation without risking the stability of the main system.
+
+Each developer can have their own sandbox system, or there can be a shared sandbox system for the team. The sandbox system can be reset to a known state if something goes wrong.
+
 Examples: todo
 
-=== Git / Off-Stack
-link to Filak
+link:https://www.linkedin.com/pulse/coding-agents-abap-source-codes-jakub-fil%C3%A1k-ym8gf/[Coding Agents with ABAP source codes] - Jakub Filák
 
-Examples: Everything normal, any editor
+=== Git / Off-Stack
+
+Examples: Everything normal, any editor, abapGit
+
+abapGit 10 years battle tested
+
+preview deployments
+
+Don't introduce git to enable LLMs, but choose git for version control, code reviews, and collaboration, and then use LLMs within that context.
 
 == Zusammenfassung
 
@@ -56,6 +70,11 @@ Autonomous?
 Concurrent?
 Cost?
 Risk?
+Version required?
+Object types?
 
-combinations of above
+
+combinations and nuances of above
 take care and consider risks
+
+#keepTheCoreMoving
