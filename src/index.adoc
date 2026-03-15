@@ -99,6 +99,30 @@ Another possibility for the future is having preview deployments, where each bra
 
 Examples: Any editor, abapGit
 
+== Broader Impact
+
+The adoption of LLMs in software development brings real benefits, but it also carries risks that extend beyond the individual team or system. These are worth naming directly.
+
+=== Job displacement
+
+LLMs increase developer productivity significantly. At scale, this reduces the number of developers needed to maintain and evolve ABAP systems. For individuals, this may mean role changes, reduced demand for certain skills, or job loss. Organizations should be deliberate about how they communicate and manage this transition rather than treating it as a side effect.
+
+=== Concentration of expertise
+
+When LLMs handle routine coding tasks, developers interact less with the underlying code. Over time, deep ABAP knowledge may concentrate in fewer people, or be lost entirely as teams shrink and institutional knowledge is not passed on. Systems become harder to understand and audit when no human has read the code carefully.
+
+=== Code quality and security
+
+LLMs generate plausible-looking code that may contain subtle bugs, logic errors, or security vulnerabilities. In ABAP systems that process business-critical data — finance, payroll, supply chain — a mistake can have serious consequences. Automated review and testing reduce this risk but do not eliminate it. LLM-generated code should be held to the same standards as human-written code.
+
+=== Energy consumption
+
+Training and running large language models consumes significant energy. At the scale of an enterprise or a platform vendor, the aggregate cost is not trivial. This is a shared industry challenge, not unique to ABAP, but it is worth factoring into decisions about how extensively LLMs are deployed.
+
+=== Vendor lock-in
+
+Relying on a single LLM provider or tightly integrated tool (e.g., a vendor-supplied copilot) introduces dependency on that vendor's pricing, availability, and terms. Patterns that keep the LLM loosely coupled — such as Git / Off-Stack — preserve more flexibility to swap providers or tooling as the market evolves.
+
 == Zusammenfassung
 
 [cols="2,1,1,1,1,1",options="header",frame=all,grid=all]
