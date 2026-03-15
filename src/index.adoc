@@ -19,12 +19,17 @@ Lars Hvam, Heliconia Labs, March 2026
 
 == Introduction
 
-SAP extension release
-contributions welcome
+The world of AI is moving fast, SAP will be releasing their vscode extension in May, easily enabling LLMs to connect to ABAP systems, and the patterns for using LLMs in ABAP development are still emerging.
 
-link:https://github.com/marianfoo/sap-ai-mcp-servers[SAP MCP Servers and SAP AI Skills]
+This document is an attempt to give an overview of the different patterns, and tries to open and answer some questions regarding each pattern.
 
-Start with the basics, link:https://factory.ai/news/agent-readiness[Agent Readiness] and link:https://dora.dev/ai/[DORA AI]
+Contributions and feedback are very welcome, please open an issue or a pull request on the github repository.
+
+Currently there is a lot od different tooling being built link:https://github.com/marianfoo/sap-ai-mcp-servers[SAP MCP Servers and SAP AI Skills] by link:https://www.linkedin.com/in/marianzeis/[Marian Zeis] gives a good overview.
+
+On a general note, the patterns are not mutually exclusive, and can be combined in various ways. For example, you could have a sandbox system that is connected to an LLM via MCP, and then use git for version control and collaboration.
+
+In an LLM implementation always start with getting the basics right, link:https://factory.ai/news/agent-readiness[Agent Readiness] and link:https://dora.dev/ai/[DORA AI] gives some suggestions on successful implementations.
 
 == Patterns
 
@@ -130,7 +135,7 @@ Industry standard, proven workflows => lots of existing knowledge, best practice
 
 Combinations and nuances of above. Take care and consider risks.
 
-Full autonomosity is of cause possible by adding SAP systems so each commit or developer has a system, which also mitiates risk, but increases cost.
+Fully autonomous operation is of course possible by adding SAP systems so each commit or developer has a system, which also mitigates risk, but increases cost.
 
 Recommend designing and choosing patterns which can make the agents run fully autonomously, but start with patterns which are less risky and costly, and then evolve towards more autonomy as you gain experience and confidence.
 
