@@ -37,7 +37,11 @@ In an LLM implementation always start with getting the basics right, link:https:
 
 image::img/pattern-se80-eclipse.svg[SE80 / Eclipse pattern]
 
-todo
+The LLM is embedded directly in the traditional ABAP development environment. The developer works within SE80 (the classic SAP GUI) or Eclipse-based ABAP Development Tools (ADT), and the AI assistant is tightly integrated as a built-in feature.
+
+This is the simplest pattern to adopt, as it requires no additional tooling or infrastructure changes. Developers continue using their familiar environment, with AI capabilities layered on top.
+
+The LLM has direct write access to the development system. Any code it generates or modifies is immediately active in the system — there is no intermediate step to review or gate changes before they are applied.
 
 Examples: Kiro/Developer Q, Joule
 
@@ -45,7 +49,11 @@ Examples: Kiro/Developer Q, Joule
 
 image::img/pattern-virtual-fs.svg[Virtual File System via ADT pattern]
 
-todo
+A VS Code extension exposes ABAP objects as a virtual file system, backed by ADT REST APIs. The developer works in VS Code, and the LLM sees ABAP source code as ordinary local files. Behind the scenes, reads and writes are translated into ADT calls against the live SAP system.
+
+This gives the LLM a familiar file-based interface to ABAP code, making it straightforward to apply standard AI coding patterns without custom tooling. However, like the SE80/Eclipse pattern, the LLM writes directly to the live system — there is no gate between the AI and the development system.
+
+Requires SAP NetWeaver 7.31 or higher with ADT backend services enabled.
 
 Examples: link:https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs[ABAP remote filesystem]
 
@@ -53,7 +61,11 @@ Examples: link:https://marketplace.visualstudio.com/items?itemName=murbani.vscod
 
 image::img/pattern-mcp-adt.svg[Model Context Protocol via ADT pattern]
 
-todo
+MCP (Model Context Protocol) is an open standard for connecting AI models to external data sources and tools. An MCP server bridges the AI agent and the SAP system by translating MCP tool calls into ADT REST API requests. The LLM can call tools to read and write ABAP objects, check syntax, execute reports, and more.
+
+Compared to the Virtual File System pattern, MCP gives the agent a richer and more structured interface. The LLM does not just see files — it has named tools with defined inputs and outputs, making it better suited for autonomous agent workflows where the LLM decides what to do next.
+
+Like the Virtual FS pattern, MCP via ADT requires SAP NetWeaver 7.31 or higher, and the LLM still has direct write access to the development system.
 
 Examples: link:https://github.com/oisee/vibing-steampunk[vibing-steampunk]
 
@@ -61,35 +73,31 @@ Examples: link:https://github.com/oisee/vibing-steampunk[vibing-steampunk]
 
 image::img/pattern-sandboxed.svg[Sandboxed pattern]
 
-todo
+Instead of connecting the LLM to the central development system, the LLM is given access to a dedicated sandbox system. The sandbox is isolated from the main system, so the LLM can read, write, and experiment freely without risking stability, data integrity, or transport locks in the central development system.
 
-LLMs connect via MCP or Remote File system to a sandbox system. The sandbox system is isolated from the main development system, and can be used for testing and experimentation without risking the stability of the main system.
+LLMs connect to the sandbox via MCP or a virtual file system. Changes that pass review are transported to the main system manually by a human.
 
-Each developer can have their own sandbox system, or there can be a shared sandbox system for the team. The sandbox system can be reset to a known state if something goes wrong.
+Each developer can have their own sandbox system, or there can be a shared sandbox system for the team. The sandbox system can be reset to a known state if something goes wrong. However, this pattern requires additional infrastructure and maintenance overhead to manage the sandbox systems.
 
-Examples: todo
-
-link:https://www.linkedin.com/pulse/coding-agents-abap-source-codes-jakub-fil%C3%A1k-ym8gf/[Coding Agents with ABAP source codes] - Jakub Filák
+Examples: link:https://www.linkedin.com/pulse/coding-agents-abap-source-codes-jakub-fil%C3%A1k-ym8gf/[Coding Agents with ABAP source codes] - Jakub Filák
 
 === Git / Off-Stack
 
 image::img/pattern-git-offstack.svg[Git / Off-Stack pattern]
 
+In this pattern, ABAP source code lives in a git repository as plain files. The LLM works on local files in any editor, pushes changes to git, and abapGit synchronizes the repository into the SAP system. The LLM never touches the SAP system directly.
+
+The key insight is that git should not be introduced solely to enable LLMs. Choose git for version control, code reviews, and collaboration — the LLM then operates naturally within that existing workflow. This gives access to the full ecosystem of git tooling, CI/CD pipelines, and industry-standard practices that many non-SAP teams already know.
+
+A CI pipeline runs on every commit or pull request, executing static analysis and unit tests and feeding the results back to the developer and the LLM. This loop allows the LLM to self-correct before code reaches the central system. A human reviews and approves pull requests, acting as the gate between AI-generated code and the development system.
+
+abapGit is open source and fully extensible — it can be adapted to support custom object types, adjusted to fit specific workflows, or integrated into automated pipelines.
+
+abapGit is battle-tested over more than ten years across many SAP systems.
+
+Another possibility for the future is having preview deployments, where each branch or pull request gets deployed to a temporary environment for testing before merging into the main branch.
+
 Examples: Any editor, abapGit
-
-abapGit 10 years battle tested
-
-preview deployments
-
-Don't introduce git to enable LLMs, but choose git for version control, code reviews, and collaboration, and then use LLMs within that context.
-
-Human in the loop to decide which code goes into the central development system.
-
-abapGit is extendable, ADT is not as such. abapGit can be adjusted and improved at will.
-
-Running static analysis and unit tests for each commit, providing feedback to the developer and the LLM, and ensuring that only code that meets quality standards is merged into the central development system.
-
-Industry standard, proven workflows => lots of existing knowledge, best practices, and tools to draw upon.
 
 == Zusammenfassung
 
