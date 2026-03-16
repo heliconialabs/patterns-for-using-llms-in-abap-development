@@ -14,7 +14,7 @@
     "url": "git+https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "CC-BY-4.0",
   "bugs": {
     "url": "https://github.com/heliconialabs/patterns-for-using-llms-in-abap-development/issues"
   },
