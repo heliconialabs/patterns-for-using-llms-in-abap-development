@@ -99,26 +99,26 @@ Another possibility for the future is having preview deployments, where each bra
 
 Examples: Any editor, abapGit
 
-=== Decentral development
+== Decentral development
 
-This patter is a combination of sandbox and git. This setup is know from almost all other languages where developers usually write code
+This pattern is a combination of sandbox and git. This setup is know from almost all other languages where developers usually write code
 on their personal workstation and they deliver the changes by pushing to a remote git repository (lets ignore the other version control systems).
 Unfortunately, ABAP does not have an official runtime which fully supports entire ABAP syntax and that can be executed on a regular developer
-machine, so this patten expects it is possible to quickly deploy a personal/team/project based ABAP system which lives for few hours or few
+machine, so this pattern expects it is possible to quickly deploy a personal/team/project based ABAP system which lives for few hours or few
 days and can be shut down when nobody is using it (running 9/5 instead of 24/7).
 
-In this pattern, it is expected that developers can work mock test data andother resources. It is expected that developers can automate
+In this pattern, it is expected that developers can work mock test data and other resources. It is expected that developers can automate
 system configuration, so when they get a new system, they do not spend days pushing the right customization.
 
-In this pattern, developers can do whatever branching strategy they want but they usually follow GitHub Pullrequest style with
+In this pattern, developers can do whatever branching strategy they want but they usually follow GitHub Pull request style with
 a short lived branches merged into the main branch after CI an code review.
 
 In this pattern, CI uses another ephemeral ABAP system where the changes get tested in an isolated environment. It is possible because
 developers already automated their setup, write modularized code and uses test doubles.
 
-In this pattern, LLMs can do whathever they realize they should do because whatever happens in these systems, stays in the system
-or in the wrost case a invalid change reaches git. If something invalid reaches git, CI will most probably catch it. And even CI does not
-chatch invalid change, there is still a chance the human reviewer (or another LLM) will catch it while reviewing the change.
+In this pattern, LLMs can do whatever they realize they should do because whatever happens in these systems, stays in the system
+or in the worst case a invalid change reaches git. If something invalid reaches git, CI will most probably catch it. And even CI does not
+catch invalid change, there is still a chance the human reviewer (or another LLM) will catch it while reviewing the change.
 
 == Broader Impact
 
