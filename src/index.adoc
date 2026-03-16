@@ -19,13 +19,13 @@ Lars Hvam, Heliconia Labs, March 2026
 
 == Introduction
 
-The world of AI is moving fast, SAP will be releasing their vscode extension in May, easily enabling LLMs to connect to ABAP systems, and the patterns for using LLMs in ABAP development are still emerging.
+The world of AI is moving fast, SAP will be releasing their vscode extension in May 2026, easily enabling LLMs to connect to ABAP systems, and the patterns for using LLMs in ABAP development are still emerging.
 
 This document is an attempt to give an overview of the different patterns, and tries to open and answer some questions regarding each pattern.
 
 Contributions and feedback are very welcome, please open an issue or a pull request on the github repository.
 
-Currently there is a lot od different tooling being built link:https://github.com/marianfoo/sap-ai-mcp-servers[SAP MCP Servers and SAP AI Skills] by link:https://www.linkedin.com/in/marianzeis/[Marian Zeis] gives a good overview.
+Currently there is a lot of different tooling being built link:https://github.com/marianfoo/sap-ai-mcp-servers[SAP MCP Servers and SAP AI Skills] by link:https://www.linkedin.com/in/marianzeis/[Marian Zeis] gives a good overview.
 
 On a general note, the patterns are not mutually exclusive, and can be combined in various ways. For example, you could have a sandbox system that is connected to an LLM via MCP, and then use git for version control and collaboration.
 
@@ -103,17 +103,17 @@ Examples: Any editor, abapGit
 
 image::img/pattern-decentral-ephemeral.svg[Decentral development with ephemeral ABAP systems pattern]
 
-This pattern is a combination of sandbox and git. This setup is know from almost all other languages where developers usually write code
-on their personal workstation and they deliver the changes by pushing to a remote git repository (lets ignore the other version control systems).
+This pattern is a combination of sandbox and git. This setup is known from almost all other languages where developers usually write code
+on their personal workstation and they deliver the changes by pushing to a remote git repository (let's ignore the other version control systems).
 Unfortunately, ABAP does not have an official runtime which fully supports entire ABAP syntax and that can be executed on a regular developer
 machine, so this pattern expects it is possible to quickly deploy a personal/team/project based ABAP system which lives for few hours or few
 days and can be shut down when nobody is using it (running 9/5 instead of 24/7).
 
-In this pattern, it is expected that developers can work mock test data and other resources. It is expected that developers can automate
+In this pattern, it is expected that developers can work with mock test data and other resources. It is expected that developers can automate
 system configuration, so when they get a new system, they do not spend days pushing the right customization.
 
 In this pattern, developers can do whatever branching strategy they want but they usually follow GitHub Pull request style with
-a short lived branches merged into the main branch after CI an code review.
+a short lived branches merged into the main branch after CI and code review.
 
 In this pattern, CI uses another ephemeral ABAP system where the changes get tested in an isolated environment. It is possible because
 developers already automated their setup, write modularized code and uses test doubles.
@@ -122,7 +122,7 @@ In this pattern, LLMs can do whatever they realize they should do because whatev
 or in the worst case a invalid change reaches git. If something invalid reaches git, CI will most probably catch it. And even CI does not
 catch invalid change, there is still a chance the human reviewer (or another LLM) will catch it while reviewing the change.
 
-== Zusammenfassung
+== Summary
 
 [cols="2,1,1,1,1,1",options="header",frame=all,grid=all]
 |===
