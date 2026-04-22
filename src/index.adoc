@@ -69,6 +69,18 @@ Like the Virtual FS pattern, MCP via ADT requires SAP NetWeaver 7.31 or higher, 
 
 Examples: link:https://github.com/oisee/vibing-steampunk[vibing-steampunk]
 
+=== Managed MCP via ADT
+
+image::img/pattern-mcp-managed.svg[Managed MCP via ADT pattern]
+
+This pattern keeps the MCP tool interface, but deploys the ADT MCP server as a centrally managed service instead of running it on each developer laptop. The server can be hosted on an internal platform, a dedicated server, or SAP BTP.
+
+The main benefit is control. Authentication, logging, exposed tools, and write permissions are managed centrally, so organizations can offer read-only access by default and allow write access only for approved users, packages, or workflows.
+
+This makes MCP more suitable for enterprise use, because the access model is no longer defined only by what an individual developer installs locally. However, the setup requires additional platform and operational work compared to a local MCP server.
+
+Examples: ARC-1 deployed on own server or SAP BTP
+
 === Sandboxed
 
 image::img/pattern-sandboxed.svg[Sandboxed pattern]
@@ -98,6 +110,18 @@ Another possibility for the future is having preview deployments, where each bra
 Static analysis can be done with abaplint providing feedback to the LLM on code quality, security issues, and best practices. Unit tests can be executed in open-abap or via an ephemeral ABAP system.
 
 Examples: Any editor, abapGit
+
+=== Git / Off-Stack with read-only MCP
+
+image::img/pattern-git-offstack-readonly-mcp.svg[Git / Off-Stack with read-only MCP pattern]
+
+This pattern combines git-based off-stack development with read-only ADT MCP tools against the SAP system. The LLM edits only local files, and all writes still go through git, pull requests, review, CI/CD, and abapGit.
+
+The MCP connection is used only for context: reading ABAP objects, inspecting dependencies, understanding system state, and doing impact analysis against the live SAP system. This gives the LLM better grounding without giving it direct write access to the system.
+
+This is a practical option for teams that already want the safety of a git-based workflow, but still need the model to understand the actual SAP landscape instead of only the repository state.
+
+Examples: Any editor, abapGit, ARC-1 in read-only mode
 
 === Decentral development with ephemeral ABAP systems
 
@@ -149,6 +173,13 @@ catch an invalid change, there is still a chance the human reviewer (or another 
 |7.31+
 |ADT
 
+|Managed MCP via ADT
+|Possible
+|$$
+|Medium
+|7.31+
+|ADT
+
 |Sandboxed
 |Possible
 |$$$
@@ -162,6 +193,13 @@ catch an invalid change, there is still a chance the human reviewer (or another 
 |Low
 |7.02+
 |abapGit
+
+|Git / Off-Stack with read-only MCP
+|Yes
+|$$
+|Low
+|7.31+
+|abapGit + ADT
 
 |Decentral development
 |Yes
